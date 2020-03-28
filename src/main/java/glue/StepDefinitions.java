@@ -34,14 +34,19 @@ public class StepDefinitions {
         entries.forEach((key, value) -> calculation.input(key, value));
     }
 
-    @Когда("Снять или поставить галочку \"(.*)\".")
-    public void switchToggle(String keywords) {
-        calculation.switchToggle(keywords);
+    @Когда("Снять галочку \"(.*)\".")
+    public void off(String keywords) {
+        calculation.off(keywords);
     }
 
     @Тогда("Дождаться изменения галочки \"(.*)\".")
     public void wait(String keywords) {
         calculation.wait(keywords);
+    }
+
+    @Когда("Поставить галочку \"(.*)\".")
+    public void on(String keywords) {
+        calculation.on(keywords);
     }
 
     @Тогда("Проверить значения полей:")

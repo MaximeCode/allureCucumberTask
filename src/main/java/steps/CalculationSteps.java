@@ -13,15 +13,21 @@ public class CalculationSteps {
         return this;
     }
 
-    @Step("Поставить/снять галочку <{0}>")
-    public CalculationSteps switchToggle(String keywords) {
-        calculation.switchToggle(keywords);
+    @Step("Cнять галочку <{0}>")
+    public CalculationSteps off(String keywords) {
+        calculation.off(keywords);
         return this;
     }
 
     @Step("Дождаться появление галочки <{0}>")
     public CalculationSteps wait(String keywords) {
         calculation.wait(keywords);
+        return this;
+    }
+
+    @Step("Поставить галочку <{0}>")
+    public CalculationSteps on(String keywords) {
+        calculation.on(keywords);
         return this;
     }
 

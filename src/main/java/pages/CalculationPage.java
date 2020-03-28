@@ -34,13 +34,29 @@ public class CalculationPage extends BasePage {
         }
     }
 
-    public void switchToggle(String keywords) {
+    public void on(String keywords) {
         scrollDown();
         WebElement toggle = getToggle(keywords);
         if (toggle == null) {
-            System.out.println("Переключатель <" + keywords +"> не найден.");
+            System.out.println("Переключатель <" + keywords + "> не найден.");
             return;
         }
+        if (!toggle.getAttribute("class").contains("dcCalc_switch_checked"))
+            switchToggle(keywords, toggle);
+    }
+
+    public void off(String keywords) {
+        scrollDown();
+        WebElement toggle = getToggle(keywords);
+        if (toggle == null) {
+            System.out.println("Переключатель <" + keywords + "> не найден.");
+            return;
+        }
+        if (toggle.getAttribute("class").contains("dcCalc_switch_checked"))
+            switchToggle(keywords, toggle);
+    }
+
+    private void switchToggle(String keywords, WebElement toggle) {
         String value = getValue("Ежемесячный платеж");
         while (true) {
             String toggleClass = toggle.getAttribute("class");

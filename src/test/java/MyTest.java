@@ -4,7 +4,6 @@ import steps.CalculationSteps;
 import steps.MainSteps;
 import utils.Init;
 import org.junit.Test;
-
 public class MyTest {
 
 /*    Сценарий:
@@ -41,9 +40,9 @@ public class MyTest {
                 .input("Стоимость недвижимости", "5 180 000 ₽")
                 .input("Первоначальный взнос", "3 058 000 ₽")
                 .input("Срок кредита", "30 лет")
-                .switchToggle("Есть зарплатная карта Сбербанка")
+                .off("Есть зарплатная карта Сбербанка")
                 .wait("Есть возможность подтвердить доход справкой")
-                .switchToggle("Молодая семья")
+                .on("Молодая семья")
                 .check("Сумма кредита", "2 122 000 ₽")
                 .check("Ежемесячный платеж", "17 535 ₽")
                 .check("Необходимый доход", "29 224 ₽")
