@@ -13,7 +13,8 @@ public class TestProperties {
     private TestProperties() {
         try {
             properties.load(new FileInputStream("src/main/resources/"
-                    + System.getProperty("browser") + ".properties"));
+//                    + System.getProperty("browser") + ".properties"));
+                    + "chrome" + ".properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

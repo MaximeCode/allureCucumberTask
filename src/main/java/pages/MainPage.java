@@ -8,7 +8,7 @@ public class MainPage extends BasePage {
 
     private By alertLocator = By.xpath("//a[@title='Закрыть предупреждение']");
     private By frameLocator = By.xpath("//iframe[@title='Основной контент']");
-    private String menuLocator = "//span[@class='lg-menu__text' and text()='%s']";
+    private String menuLocator = "//label[contains(text(), %s)]";
 
     public void goToMenu(String keywords) {
         closeAlert();

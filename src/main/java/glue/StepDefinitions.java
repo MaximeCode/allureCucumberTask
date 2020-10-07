@@ -22,6 +22,11 @@ public class StepDefinitions {
     @Когда("Навести курсор на пункт \"(.*)\" в верхнем меню, дождаться открытия выпадающего меню.")
     public void goToMenu(String keywords) {
         main.goToMenu(keywords);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Когда("Выбрать пункт \"(.*)\".")
